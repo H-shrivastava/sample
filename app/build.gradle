@@ -1,0 +1,33 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    namespace 'com.vestrel00.jitpack.sample.app'
+
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 33
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'com.github.vestrel00:jitpack-publish-sample:3.1.0'
+
+    // Pretend that this sample app is not in the same repo as the published module.
+    // Otherwise, it would look like this.
+    // implementation project(':module1')
+    // implementation project(':module2')
+}
